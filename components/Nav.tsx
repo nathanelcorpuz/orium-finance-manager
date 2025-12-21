@@ -21,59 +21,59 @@ export default function Nav() {
   const inSettings = pathname === "/settings";
 
   return (
-    <nav className="flex flex-col bg-blue-100 rounded-sm p-3 h-full gap-4">
+    <nav className="flex flex-col bg-blue-100 rounded-sm p-2 h-full gap-4">
       <Link href="/">
         <div
-          className={`w-11.25 h-11.25 ${
+          className={`w-9 h-9 ${
             inHome ? "bg-blue-800" : ""
           } rounded-full flex items-center justify-center`}
         >
-          <House size={22} color={inHome ? "white" : "black"} />
+          <House size={18} color={inHome ? "white" : "blue"} />
         </div>
       </Link>
       <Link href="/forecast">
         <div
-          className={`w-11.25 h-11.25 ${
+          className={`w-9 h-9 ${
             inForecast ? "bg-blue-800" : ""
           } rounded-full flex items-center justify-center`}
         >
-          <TrendingUpDown size={22} color={inForecast ? "white" : "black"} />
+          <TrendingUpDown size={18} color={inForecast ? "white" : "blue"} />
         </div>
       </Link>
       <Link href="/transactions">
         <div
-          className={`w-11.25 h-11.25 ${
+          className={`w-9 h-9 ${
             inTransactions ? "bg-blue-800" : ""
           } rounded-full flex items-center justify-center`}
         >
-          <List size={22} color={inTransactions ? "white" : "black"} />
+          <List size={18} color={inTransactions ? "white" : "blue"} />
         </div>
       </Link>
       <Link href="/finances">
         <div
-          className={`w-11.25 h-11.25 ${
+          className={`w-9 h-9 ${
             inFinances ? "bg-blue-800" : ""
           } rounded-full flex items-center justify-center`}
         >
-          <Wallet size={22} color={inFinances ? "white" : "black"} />
+          <Wallet size={18} color={inFinances ? "white" : "blue"} />
         </div>
       </Link>
       <Link href="/categories">
         <div
-          className={`w-11.25 h-11.25 ${
+          className={`w-9 h-9 ${
             inCategories ? "bg-blue-800" : ""
           } rounded-full flex items-center justify-center`}
         >
-          <Shapes size={22} color={inCategories ? "white" : "black"} />
+          <Shapes size={18} color={inCategories ? "white" : "blue"} />
         </div>
       </Link>
       <Link href="/settings">
         <div
-          className={`w-11.25 h-11.25 ${
+          className={`w-9 h-9 ${
             inSettings ? "bg-blue-800" : ""
           } rounded-full flex items-center justify-center`}
         >
-          <Settings size={22} color={inSettings ? "white" : "black"} />
+          <Settings size={18} color={inSettings ? "white" : "blue"} />
         </div>
       </Link>
     </nav>
