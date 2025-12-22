@@ -13,14 +13,14 @@ let formatter = new Intl.NumberFormat("en-PH", {
 
 export default function Forecast() {
   return (
-    <main className="p-8 flex flex-col gap-4 w-full">
+    <main className="p-8 flex flex-col gap-4 w-full text-xs">
       {mockForecastData.map((year) => {
         return (
           <div
             key={year.year}
             className="flex flex-col bg-blue-100 p-4 rounded-xl w-full gap-2"
           >
-            <p className="text-sm text-gray-500 font-bold">{year.year}</p>
+            <p className="text-gray-500 font-bold">{year.year}</p>
             <div className="flex justify-between">
               {year.months.map((month) => {
                 const isLowestLow = month.lowest < low;
@@ -36,7 +36,7 @@ export default function Forecast() {
                     key={month.month + month.highest}
                     className="gap-1 flex flex-col"
                   >
-                    <p className="text-sm text-gray-500">{month.month}</p>
+                    <p className="text-gray-500">{month.month}</p>
                     <div
                       className={`p-1 rounded-lg 
                       ${
@@ -48,9 +48,7 @@ export default function Forecast() {
                       }
                       bg-gray-400`}
                     >
-                      <p className="text-sm">
-                        {formatter.format(month.highest)}
-                      </p>
+                      <p className="">{formatter.format(month.highest)}</p>
                     </div>
                     <div
                       className={`p-1 rounded-lg 
@@ -63,9 +61,7 @@ export default function Forecast() {
                       }
                       bg-gray-400`}
                     >
-                      <p className="text-sm">
-                        {formatter.format(month.lowest)}
-                      </p>
+                      <p className="">{formatter.format(month.lowest)}</p>
                     </div>
                   </div>
                 );
