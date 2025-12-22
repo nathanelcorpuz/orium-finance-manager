@@ -1,8 +1,6 @@
 "use client";
 
 import { Transaction } from "@/utils/types";
-import { format } from "date-fns";
-import { Filter } from "lucide-react";
 import { useState } from "react";
 import TransactionItem from "./TransactionItem";
 import TransactionItemModal from "./TransactionItemModal";
