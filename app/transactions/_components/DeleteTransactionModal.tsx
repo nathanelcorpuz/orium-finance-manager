@@ -1,21 +1,13 @@
-"use client";
-
-import { Transaction } from "@/utils/types";
 import { X } from "lucide-react";
-import { Dispatch, SetStateAction, useState } from "react";
 import TransactionItemInModal from "./TransactionItemInModal";
+import { Dispatch, SetStateAction } from "react";
+import { Transaction } from "@/utils/types";
 
-export default function TransactionItemModal({
+export default function DeleteTransactionModal({
   setModalOpen,
-  setDeleteModalOpen,
-  setEditModalOpen,
-  setCompleteModalOpen,
   tx,
 }: {
   setModalOpen: Dispatch<SetStateAction<boolean>>;
-  setDeleteModalOpen: Dispatch<SetStateAction<boolean>>;
-  setEditModalOpen: Dispatch<SetStateAction<boolean>>;
-  setCompleteModalOpen: Dispatch<SetStateAction<boolean>>;
   tx: Transaction;
 }) {
   return (
@@ -28,7 +20,7 @@ export default function TransactionItemModal({
       ></div>
       <div className="w-100 bg-white z-4">
         <div className="flex justify-between p-4">
-          <p className="text-lg">Select an action</p>
+          <p className="text-lg">Delete this transaction?</p>
           <button
             onClick={() => {
               setModalOpen(false);
@@ -37,6 +29,7 @@ export default function TransactionItemModal({
             <X size={22} />
           </button>
         </div>
+        <p className="p-4 text-red-500 font-bold">This action cannot be undone</p>
         <TransactionItemInModal tx={tx} />
         <div className="flex justify-between p-4 gap-2">
           <button
@@ -51,28 +44,9 @@ export default function TransactionItemModal({
             className="p-2 w-full border border-black rounded-lg cursor-pointer hover:bg-gray-200"
             onClick={() => {
               setModalOpen(false);
-              setDeleteModalOpen(true);
             }}
           >
-            Delete
-          </button>
-          <button
-            className="p-2 w-full border border-black rounded-lg cursor-pointer hover:bg-gray-200"
-            onClick={() => {
-              setModalOpen(false);
-              setEditModalOpen(true);
-            }}
-          >
-            Edit
-          </button>
-          <button
-            className="p-2 w-full border border-black rounded-lg cursor-pointer hover:bg-gray-200"
-            onClick={() => {
-              setModalOpen(false);
-              setCompleteModalOpen(true);
-            }}
-          >
-            Complete
+            Submit
           </button>
         </div>
       </div>

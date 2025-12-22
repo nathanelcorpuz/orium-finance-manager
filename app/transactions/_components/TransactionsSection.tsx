@@ -8,16 +8,23 @@ import TransactionItem from "./TransactionItem";
 import TransactionItemModal from "./TransactionItemModal";
 import FilterSection from "./FilterSection";
 import FilterModal from "./FilterModal";
+import DeleteTransactionModal from "./DeleteTransactionModal";
+import EditTransactionModal from "./EditTransactionModal";
+import CompleteTransactionModal from "./CompleteTransactionModal";
 
 export default function TransactionsSection({
   transactions,
 }: {
   transactions: Transaction[];
 }) {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [transactionModalOpen, setTransactionModalOpen] = useState(false);
   const [selectedTransaction, setSelectedTransaction] = useState(
     {} as Transaction
   );
+
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [completeModalOpen, setCompleteModalOpen] = useState(false);
 
   const [filterModalOpen, setFilterModalOpen] = useState(false);
 
@@ -41,13 +48,35 @@ export default function TransactionsSection({
               key={tx.id}
               tx={tx}
               setSelectedAccount={setSelectedTransaction}
-              setModalOpen={setModalOpen}
+              setModalOpen={setTransactionModalOpen}
             />
           );
         })}
-        {modalOpen && (
+        {transactionModalOpen && (
           <TransactionItemModal
-            setModalOpen={setModalOpen}
+            setModalOpen={setTransactionModalOpen}
+            setDeleteModalOpen={setDeleteModalOpen}
+            setEditModalOpen={setEditModalOpen}
+            setCompleteModalOpen={setCompleteModalOpen}
+            tx={selectedTransaction}
+          />
+        )}
+
+        {deleteModalOpen && (
+          <DeleteTransactionModal
+            setModalOpen={setDeleteModalOpen}
+            tx={selectedTransaction}
+          />
+        )}
+        {editModalOpen && (
+          <EditTransactionModal
+            setModalOpen={setEditModalOpen}
+            tx={selectedTransaction}
+          />
+        )}
+        {completeModalOpen && (
+          <CompleteTransactionModal
+            setModalOpen={setCompleteModalOpen}
             tx={selectedTransaction}
           />
         )}
