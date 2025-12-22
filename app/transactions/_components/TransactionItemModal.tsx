@@ -1,12 +1,12 @@
-import { Account } from "@/utils/types";
+import { Transaction } from "@/utils/types";
 import { Dispatch, SetStateAction } from "react";
 
-export default function AccountItemModal({
+export default function TransactionItemModal({
   setModalOpen,
-  account,
+  tx,
 }: {
   setModalOpen: Dispatch<SetStateAction<boolean>>;
-  account: Account;
+  tx: Transaction;
 }) {
   return (
     <div className="fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center">
@@ -18,10 +18,9 @@ export default function AccountItemModal({
         }}
       ></div>
       <div className="w-200 h-200 bg-white z-4">
-        <p>Account Item Modal</p>
+        <p>Transaction Modal</p>
         <button
           onClick={() => {
-            console.log("B");
             setModalOpen(false);
           }}
         >
