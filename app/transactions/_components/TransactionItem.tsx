@@ -24,6 +24,7 @@ export default function TransactionItem({
       <p className="w-[20.5%]">{tx.amount}</p>
       <p className="w-[20.5%]">{format(tx.date, "MMM dd, yyyy")}</p>
       <p className="w-[20%]">{tx.category}</p>
+      <p className="w-[19%]">{tx.account}</p>
     </div>
   );
 }

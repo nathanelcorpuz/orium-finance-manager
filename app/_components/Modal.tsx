@@ -19,7 +19,7 @@ export default function Modal({
           setModalOpen(false);
         }}
       ></div>
-      <div className={`${width} bg-white z-4`}>{children}</div>
+      <div className={`${width} max-h-[80vh] overflow-y-auto bg-white z-4`}>{children}</div>
     </div>
   );
 }

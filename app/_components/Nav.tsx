@@ -1,12 +1,5 @@
 "use client";
-import {
-  House,
-  List,
-  Settings,
-  Shapes,
-  TrendingUpDown,
-  Wallet,
-} from "lucide-react";
+import { House, List, Settings, TrendingUpDown, Wallet } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -17,7 +10,6 @@ export default function Nav() {
   const inForecast = pathname === "/forecast";
   const inTransactions = pathname === "/transactions";
   const inFinances = pathname === "/finances";
-  const inCategories = pathname === "/categories";
   const inSettings = pathname === "/settings";
 
   return (
@@ -57,15 +49,6 @@ export default function Nav() {
             } rounded-full flex items-center justify-center`}
           >
             <Wallet size={18} color={inFinances ? "white" : "blue"} />
-          </div>
-        </Link>
-        <Link href="/categories">
-          <div
-            className={`w-9 h-9 ${
-              inCategories ? "bg-blue-800" : ""
-            } rounded-full flex items-center justify-center`}
-          >
-            <Shapes size={18} color={inCategories ? "white" : "blue"} />
           </div>
         </Link>
         <Link href="/settings">

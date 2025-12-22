@@ -38,6 +38,7 @@ export default function TransactionsSection({
         <p className="w-[20%]">Amount</p>
         <p className="w-[20%]">Due Date</p>
         <p className="w-[20%]">Category</p>
+        <p className="w-[20%]">Account</p>
       </div>
       <div className="flex flex-col h-160 overflow-y-scroll bg-blue-50 p-2 rounded-lg">
         {transactions.map((tx) => {

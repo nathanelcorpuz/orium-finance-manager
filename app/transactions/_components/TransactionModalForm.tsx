@@ -26,10 +26,25 @@ export default function TransactionModalForm({ tx }: { tx: Transaction }) {
           type="date"
         />
       </div>
+      <div className="flex flex-col gap-1 p-2 bg-blue-100 rounded-lg">
+        <label htmlFor="account">Account</label>
+        <select
+          name="account"
+          id="account"
+          className="p-1 border border-blue-300 rounded-lg"
+        >
+          <option value="bdo">BDO</option>
+          <option value="chinabank">Chinabank</option>
+          <option value="ub">Unionbank</option>
+          <option value="gcash">GCash</option>
+          <option value="maya">Maya</option>
+        </select>
+      </div>
       <div className="p-2 flex flex-col  bg-blue-100 rounded-lg">
         <p>New Notes</p>
         <textarea
           className="border-b py-1 focus:outline-none w-full"
+          rows={5}
           defaultValue={tx.notes}
         />
       </div>
