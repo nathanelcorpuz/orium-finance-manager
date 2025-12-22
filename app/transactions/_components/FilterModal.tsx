@@ -26,7 +26,7 @@ export default function FilterModal({
             <X size={22} />
           </button>
         </div>
-        <div className="p-4 flex flex-col gap-8">
+        <div className="p-4 flex flex-col gap-2">
           <SearchSection />
           <div className="flex flex-col p-4 bg-blue-100 rounded-md gap-4">
             <p className="opacity-50">By amount</p>
