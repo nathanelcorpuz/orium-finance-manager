@@ -1,4 +1,3 @@
-import { X } from "lucide-react";
 import TransactionItemInModal from "./TransactionItemInModal";
 import { Dispatch, SetStateAction } from "react";
 import { Transaction } from "@/utils/types";
@@ -12,17 +11,7 @@ export default function DeleteTransactionModal({
   tx: Transaction;
 }) {
   return (
-    <Modal setModalOpen={setModalOpen}>
-      <div className="flex justify-between p-4">
-        <p className="text-lg">Delete this transaction?</p>
-        <button
-          onClick={() => {
-            setModalOpen(false);
-          }}
-        >
-          <X size={22} />
-        </button>
-      </div>
+    <Modal title="Delete this transaction?" open={setModalOpen}>
       <p className="p-4 text-red-500 font-bold">This action cannot be undone</p>
       <TransactionItemInModal tx={tx} />
       <div className="flex justify-between p-4 gap-2">

@@ -13,17 +13,7 @@ export default function CompleteTransactionModal({
   tx: Transaction;
 }) {
   return (
-    <Modal setModalOpen={setModalOpen}>
-      <div className="flex justify-between p-4">
-        <p className="text-lg">Complete this transaction?</p>
-        <button
-          onClick={() => {
-            setModalOpen(false);
-          }}
-        >
-          <X size={22} />
-        </button>
-      </div>
+    <Modal title="Complete this transaction?" open={setModalOpen}>
       <p className="p-4 text-red-500 font-bold">This action cannot be undone</p>
       <TransactionItemInModal tx={tx} />
       <TransactionModalForm tx={tx} />

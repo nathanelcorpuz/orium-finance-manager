@@ -2,7 +2,6 @@
 
 import Modal from "@/app/_components/Modal";
 import { Account } from "@/utils/types";
-import { X } from "lucide-react";
 import { Dispatch, SetStateAction, useState } from "react";
 import Selected from "./Selected";
 import DeleteView from "./DeleteView";
@@ -16,21 +15,11 @@ export default function EditModal({
 }) {
   const [showDelete, setShowDelete] = useState(false);
   return (
-    <Modal setModalOpen={setModalOpen}>
+    <Modal title="Edit Account" open={setModalOpen}>
       {showDelete ? (
         <DeleteView setShowDelete={setShowDelete} account={selected} />
       ) : (
         <>
-          <div className="flex justify-between p-4">
-            <p className="text-lg">Edit Account</p>
-            <button
-              onClick={() => {
-                setModalOpen(false);
-              }}
-            >
-              <X size={22} />
-            </button>
-          </div>
           <Selected selected={selected} />
           <div className="p-4 gap-4 flex flex-col">
             <div className="p-2 py-4 flex flex-col  bg-blue-100 rounded-lg">

@@ -1,5 +1,4 @@
 import Modal from "@/app/_components/Modal";
-import { X } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
 
 export default function AddModal({
@@ -8,17 +7,7 @@ export default function AddModal({
   setOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
-    <Modal setModalOpen={setOpen}>
-      <div className="flex justify-between p-4">
-        <p className="text-lg">Add New Account</p>
-        <button
-          onClick={() => {
-            setOpen(false);
-          }}
-        >
-          <X size={22} />
-        </button>
-      </div>
+    <Modal title="Add New Account" open={setOpen}>
       <div className="p-4 gap-4 flex flex-col">
         <div className="p-2 py-4 flex flex-col  bg-blue-100 rounded-lg">
           <p>Name</p>

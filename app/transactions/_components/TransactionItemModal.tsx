@@ -1,7 +1,6 @@
 "use client";
 
 import { Transaction } from "@/utils/types";
-import { X } from "lucide-react";
 import { Dispatch, SetStateAction, useState } from "react";
 import TransactionItemInModal from "./TransactionItemInModal";
 import Modal from "@/app/_components/Modal";
@@ -20,17 +19,7 @@ export default function TransactionItemModal({
   tx: Transaction;
 }) {
   return (
-    <Modal setModalOpen={setModalOpen}>
-      <div className="flex justify-between p-4">
-        <p className="text-lg">Select an action</p>
-        <button
-          onClick={() => {
-            setModalOpen(false);
-          }}
-        >
-          <X size={22} />
-        </button>
-      </div>
+    <Modal title="Select Action" open={setModalOpen}>
       <TransactionItemInModal tx={tx} />
       <div className="flex justify-between p-4 gap-2">
         <button

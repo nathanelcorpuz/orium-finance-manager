@@ -1,4 +1,3 @@
-import { X } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
 import SearchSection from "./SearchSection";
 import Modal from "@/app/_components/Modal";
@@ -9,17 +8,7 @@ export default function FilterModal({
   setModalOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
-    <Modal setModalOpen={setModalOpen}>
-      <div className="flex justify-between p-4">
-        <p className="text-lg">Filter</p>
-        <button
-          onClick={() => {
-            setModalOpen(false);
-          }}
-        >
-          <X size={22} />
-        </button>
-      </div>
+    <Modal title="Filter" open={setModalOpen}>
       <div className="p-4 flex flex-col gap-2">
         <SearchSection />
         <div className="flex flex-col p-4 bg-blue-100 rounded-md gap-4">
