@@ -27,13 +27,13 @@ export default function TransactionsSection({
   const [filterModalOpen, setFilterModalOpen] = useState(false);
 
   return (
-    <div className="flex flex-col justify-between h-180 bg-blue-100 p-4 rounded-xl">
-      <div className="flex gap-2 justify-between">
+    <div className="flex flex-col justify-between h-180 rounded-xl">
+      <div className="flex gap-2 justify-between items-center">
         <p className="text-sm text-gray-500">Future Transactions</p>
         <FilterSection setModalOpen={setFilterModalOpen} />
         {filterModalOpen && <FilterModal setModalOpen={setFilterModalOpen} />}
       </div>
-      <div className="flex p-2">
+      <div className="flex p-2 text-gray-400">
         <p className="w-[20%]">Name</p>
         <p className="w-[20%]">Amount</p>
         <p className="w-[20%]">Due Date</p>

@@ -1,0 +1,38 @@
+import { Finance } from "./types";
+
+export const mockIncoming = [
+  {
+    id: 0,
+    name: "nanay work",
+    amount: 10000,
+    account: "0",
+    direction: "incoming",
+    frequency: "weekly",
+    startDate: new Date("January 7, 2026"),
+    endDate: new Date("Dec 30, 2030"),
+    daysOfWeek: [3],
+    dayOfMonth: null,
+    customFrequency: null,
+    customFrequencyNumber: null,
+    ends: "never",
+    endsOnDate: null,
+    endsAfterOccurrences: null,
+  },
+  {
+    id: 1,
+    name: "tatay work",
+    amount: 40000,
+    account: "2",
+    direction: "incoming",
+    frequency: "monthly",
+    startDate: new Date("January 10, 2026"),
+    endDate: new Date("Dec 10, 2030"),
+    daysOfWeek: null,
+    dayOfMonth: 10,
+    customFrequency: null,
+    customFrequencyNumber: null,
+    ends: "on",
+    endsOnDate: null,
+    endsAfterOccurrences: null,
+  },
+] as Finance[];

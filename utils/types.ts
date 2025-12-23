@@ -26,11 +26,11 @@ export interface Finance {
   frequency: "daily" | "weekly" | "monthly" | "yearly";
   startDate: Date;
   endDate: Date;
-  daysOfWeek: DayOfWeek[];
-  dayOfMonth: number;
-  customFrequency: "days" | "weeks" | "months" | "years";
-  customFrequencyNumber: number;
+  daysOfWeek: DayOfWeek[] | null;
+  dayOfMonth: number | null;
+  customFrequency: "days" | "weeks" | "months" | "years" | null;
+  customFrequencyNumber: number | null;
   ends: "never" | "on" | "after";
-  endsOnDate: Date;
-  endsAfterOccurrences: number;
+  endsOnDate: Date | null;
+  endsAfterOccurrences: number | null;
 }
