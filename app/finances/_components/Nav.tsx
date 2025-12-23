@@ -11,7 +11,7 @@ export default function Nav() {
   const inOutgoing = pathname === "/finances/outgoing";
 
   return (
-    <nav className="flex gap-4 p-4">
+    <nav className="flex gap-4 py-4">
       <Link href="/finances/accounts">
         <p
           className={`p-2 hover:bg-blue-100 rounded-md ${

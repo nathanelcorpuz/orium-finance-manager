@@ -7,10 +7,10 @@ export default function Nav() {
   const pathname = usePathname();
 
   const inHome = pathname === "/";
-  const inForecast = pathname === "/forecast";
-  const inTransactions = pathname === "/transactions";
-  const inFinances = pathname === "/finances";
-  const inSettings = pathname === "/settings";
+  const inForecast = pathname.includes("forecast");
+  const inTransactions = pathname.includes("/transactions");
+  const inFinances = pathname.includes("/finances");
+  const inSettings = pathname.includes("/settings");
 
   return (
     <nav className="fixed h-screen w-25 p-4">
